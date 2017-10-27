@@ -1,0 +1,16 @@
+<% action_url = session_url %>
+<h1>Sign In</h1>
+
+<% if flash.now[:errors] %>
+<%= flash.now[:errors].first %>
+<% end  %>
+
+<form action= "<%= action_url %>" method="post">
+  <input type = "hidden" name = "authenticity_token" value= "<%= form_authenticity_token %>">
+<label for="Username">Username:</label>
+<input type="text" name="user[username]">
+<label for="Password">Password</label>
+<input type="password" name="user[password]">
+<input type="submit" value="Sign In">
+
+</form>
